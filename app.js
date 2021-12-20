@@ -1,8 +1,9 @@
 const express = require("express");
-const tempEngine = require("express-handlebars");
+const { engine } = require("express-handlebars");
 const bodyParser = require("body-parser");
 
 const db = require("./db");
+const Product = require("./models/product");
 
 const app = express();
 
@@ -10,8 +11,20 @@ db.authenticate()
   .then(console.log("Connection has been established successfully."))
   .catch((error) => console.error("Unable to connect to the database:", error));
 
+app.engine("handlebars", engine({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.get("/", (req, res) => {
-  res.send("Home page");
+  Product.findAll()
+    .then((products) => {
+      console.log(products);
+      res.render("products", {
+        data: products,
+      });
+    })
+    .catch((err) => console.log(err));
 });
 
 app.use("/product", require("./routes/products"));

@@ -1,24 +1,24 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const Product = db.define(
-  "product",
+const Order = db.define(
+  "order",
   {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
     },
-    title: {
+    prod_id: {
+      type: Sequelize.INTEGER,
+    },
+    total: {
+      type: Sequelize.DOUBLE,
+    },
+    stripe_id: {
       type: Sequelize.STRING,
     },
-    description: {
-      type: Sequelize.TEXT,
-    },
-    image: {
+    status: {
       type: Sequelize.STRING,
-    },
-    price: {
-      type: Sequelize.FLOAT,
     },
   },
   {
@@ -26,4 +26,4 @@ const Product = db.define(
   }
 );
 
-module.exports = Product;
+module.exports = Order;

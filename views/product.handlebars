@@ -1,0 +1,70 @@
+<section class="container">
+
+  <section class="container">
+    <h1> {{data.title}} </h1>
+    <img src="{{data.image}}" alt="" />
+    <p>{{data.description}}</p>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Launch demo modal
+    </button>
+  </section>
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <form action="payment" method="POST">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="email"
+            />
+            <input
+              type="text"
+              name="customer_name"
+              class="form-control"
+              placeholder="name as on card"
+            />
+            <input
+              type="text"
+              name="number"
+              class="form-control"
+              placeholder="card number"
+            />
+            <input
+              type="text"
+              name="exp"
+              class="form-control"
+              placeholder="expiry date"
+            />
+            <input
+              type="text"
+              name="cvc"
+              class="form-control"
+              placeholder="cvv"
+            />
+            <input type="hidden" name="prod_id" value="{{data.id}}" />
+            <input type="hidden" name="price" value="{{data.price}}" />
+            <input type="hidden" name="title" value="{{data.title}}" />
+            <input type="submit" value="make payment" />
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
