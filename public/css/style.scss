@@ -1,0 +1,51 @@
+.price {
+  font-size: 1.75rem;
+  color: #292929;
+}
+
+.section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .page-title {
+    text-align: center;
+  }
+  hr {
+    margin-bottom: 2rem;
+  }
+}
+
+img {
+  width: 100% !important;
+}
+
+.heading-custom {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.h {
+  &-100vh {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.message {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.f {
+  &-2rem {
+    font-size: 2rem;
+  }
+}

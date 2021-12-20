@@ -1,6 +1,7 @@
 const express = require("express");
 const { engine } = require("express-handlebars");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const db = require("./db");
 const Product = require("./models/product");
@@ -13,6 +14,8 @@ db.authenticate()
 
 app.engine("handlebars", engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 

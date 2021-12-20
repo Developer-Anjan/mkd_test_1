@@ -10,8 +10,6 @@ const Order = require("../models/order");
 
 const publishible_key =
   "pk_test_51K8onISJKcJSzk8WN2b5bikjODtKcln4SdY17DCTA9YSEyXSWu2ORb9dji4rU5gBJRdjvB8YVepyBTnafXVxZT8f00XAAIF1xh";
-const secret_key =
-  "sk_test_51K8onISJKcJSzk8WTbHErDh5AlSEhOfGPUti52Njat2Dft9m21EWHpC8xl6FSL4pOCIZzA3RHblLvkmFcDpTCD5J00Go5ivFdk";
 
 router.get("/:id", (req, res) => {
   const prodId = req.params.id;
